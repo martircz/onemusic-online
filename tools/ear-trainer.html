@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Ear Trainer — Interval Recognition | One Music Online</title>
+    <meta name="description" content="Free online ear trainer. Practice recognizing musical intervals by ear with instant feedback, scoring, and streaks. Works in your browser, no signup.">
+    <link rel="canonical" href="https://onemusic.online/tools/ear-trainer.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <style>
+        .stats { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+        .stat { text-align: center; }
+        .stat__num { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--primary); }
+        .stat__label { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); }
+        #answers { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: 1.5rem 0; }
+        .answer-btn {
+            font-family: var(--font-body); font-size: .95rem; font-weight: 500; padding: .75rem;
+            border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+            background: var(--surface); color: var(--text); cursor: pointer; transition: all .12s;
+        }
+        .answer-btn:hover:not(:disabled) { border-color: var(--primary); }
+        .answer-btn:disabled { cursor: default; }
+        .answer-btn.correct { background: rgba(52,211,153,.2); border-color: var(--accent-dark); color: var(--accent-dark); }
+        .answer-btn.wrong { background: rgba(220,38,38,.12); border-color: #dc2626; color: #dc2626; }
+        .feedback { min-height: 1.5rem; font-weight: 600; margin: .5rem 0; color: var(--text-muted); }
+        #quiz { display: none; }
+        @media (max-width: 480px) { #answers { grid-template-columns: 1fr; } }
+    </style>
+    <script type="application/ld+json">
+    { "@context":"https://schema.org","@type":"WebApplication","name":"Online Ear Trainer","applicationCategory":"MusicApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"} }
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="/"><span class="nav__dot"></span>One Music Online</a>
+            <div class="nav__links">
+                <a href="/tools/metronome.html">Metronome</a>
+                <a href="/tools/tuner.html">Tuner</a>
+                <a href="/blog/">Guides</a>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                <a class="nav__cta" href="https://musictrainer.pro">Try MusicTrainerPro</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tool">
+        <h1>Ear Trainer</h1>
+        <p class="tool__sub">Two notes play. Name the interval between them.</p>
+
+        <div class="tool__panel">
+            <button class="btn btn--primary btn--lg" id="startBtn">▶ Start training</button>
+
+            <div id="quiz">
+                <div class="stats">
+                    <div class="stat"><div class="stat__num" id="score">0/0</div><div class="stat__label">Score</div></div>
+                    <div class="stat"><div class="stat__num" id="streak">0</div><div class="stat__label">Streak</div></div>
+                    <div class="stat"><div class="stat__num" id="best">0</div><div class="stat__label">Best</div></div>
+                </div>
+
+                <button class="btn btn--ghost" id="replayBtn">🔁 Replay interval</button>
+
+                <div id="answers"></div>
+                <div class="feedback" id="feedback"></div>
+                <button class="btn btn--accent btn--lg" id="nextBtn" style="display:none">Next →</button>
+            </div>
+        </div>
+
+        <article class="prose" style="text-align:left;margin-top:3rem">
+            <h2>How to train your ear</h2>
+            <p>Listen to the two notes, then pick the interval. If you miss it, the correct answer lights up — replay it and burn the sound into memory. Reference songs help: a Perfect 4th is "Here Comes the Bride," a Perfect 5th opens "Twinkle Twinkle," an Octave is "Somewhere Over the Rainbow."</p>
+            <h2>Why it matters</h2>
+            <ul>
+                <li>Play by ear instead of relying only on sheet music.</li>
+                <li>Transcribe songs you love faster.</li>
+                <li>Improvise and harmonize with confidence.</li>
+            </ul>
+            <p>Want chord recognition, melodic dictation, and progress tracking? <a href="https://musictrainer.pro">MusicTrainerPro</a> has a full ear-training module.</p>
+        </article>
+
+        <div class="cta-band" style="margin-top:3rem">
+            <h2>Go beyond intervals</h2>
+            <p>MusicTrainerPro trains chords, scales, and melodies — and tracks your progress over time.</p>
+            <a class="btn btn--accent btn--lg" href="https://musictrainer.pro">Try it free →</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">© <span id="year"></span> One Music Media s.r.o. — <a href="/">onemusic.online</a></div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/ear-trainer.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

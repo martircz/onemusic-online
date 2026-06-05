@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Metronome — Accurate, No Ads | One Music Online</title>
+    <meta name="description" content="A free, accurate online metronome with adjustable BPM, time signatures, and accented beats. Works in your browser — no download, no signup.">
+    <link rel="canonical" href="https://onemusic.online/tools/metronome.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <style>
+        .bpm-display { font-size: 4.5rem; line-height: 1; color: var(--primary); }
+        .bpm-label { color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; }
+        #beatDots { display: flex; justify-content: center; gap: .75rem; margin: 1.5rem 0; }
+        .beat-dot { width: 18px; height: 18px; border-radius: 50%; background: var(--border); transition: transform .08s, background .08s; }
+        .beat-dot--accent { background: var(--text-muted); }
+        .beat-dot.active { background: var(--primary); transform: scale(1.5); }
+        .beat-dot--accent.active { background: var(--accent-dark); }
+    </style>
+    <script type="application/ld+json">
+    { "@context":"https://schema.org","@type":"WebApplication","name":"Online Metronome","applicationCategory":"MusicApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"} }
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="/"><span class="nav__dot"></span>One Music Online</a>
+            <div class="nav__links">
+                <a href="/tools/metronome.html">Metronome</a>
+                <a href="/tools/tuner.html">Tuner</a>
+                <a href="/blog/">Guides</a>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                <a class="nav__cta" href="https://musictrainer.pro">Try MusicTrainerPro</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tool">
+        <h1>Online Metronome</h1>
+        <p class="tool__sub">Accurate, free, and instant. Press space to start.</p>
+
+        <div class="tool__panel">
+            <div class="bpm-label">Tempo</div>
+            <div class="bpm-display tool__readout"><span id="bpmValue">100</span></div>
+            <div class="bpm-label">BPM</div>
+
+            <div id="beatDots"></div>
+
+            <div class="control-row">
+                <button class="iconbtn" id="bpmMinus" aria-label="Decrease BPM">−</button>
+                <input type="range" id="bpmSlider" min="30" max="300" value="100" aria-label="Tempo">
+                <button class="iconbtn" id="bpmPlus" aria-label="Increase BPM">+</button>
+            </div>
+
+            <div class="control-row">
+                <label>Time signature
+                    <select id="beatsSelect" aria-label="Beats per bar">
+                        <option value="2">2/4</option>
+                        <option value="3">3/4</option>
+                        <option value="4" selected>4/4</option>
+                        <option value="5">5/4</option>
+                        <option value="6">6/8</option>
+                    </select>
+                </label>
+            </div>
+
+            <button class="btn btn--primary btn--lg" id="playBtn" style="margin-top:.5rem">▶ Start</button>
+        </div>
+
+        <article class="prose" style="text-align:left;margin-top:3rem">
+            <h2>How to use this metronome</h2>
+            <p>Set your tempo with the slider or the +/− buttons, choose a time signature, and hit Start (or press the spacebar). The first beat of each bar is accented so you can feel the pulse.</p>
+            <h2>Practising with a metronome</h2>
+            <ul>
+                <li>Start slower than feels comfortable — accuracy first, speed later.</li>
+                <li>Raise the tempo in small steps (2–4 BPM) once a passage is clean.</li>
+                <li>Practise difficult bars in isolation before playing the whole piece.</li>
+            </ul>
+            <p>Want the metronome built into structured practice with progress tracking and real instrument feedback? <a href="https://musictrainer.pro">Try MusicTrainerPro free</a>.</p>
+        </article>
+
+        <div class="cta-band" style="margin-top:3rem">
+            <h2>Practice with purpose</h2>
+            <p>MusicTrainerPro turns a metronome into a full practice loop — exercises, plans, and feedback.</p>
+            <a class="btn btn--accent btn--lg" href="https://musictrainer.pro">Get started free →</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">© <span id="year"></span> One Music Media s.r.o. — <a href="/">onemusic.online</a></div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/metronome.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

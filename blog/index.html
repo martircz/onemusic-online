@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Guides for Musicians | One Music Online</title>
+    <meta name="description" content="Practical, no-fluff guides on practising, memorizing music, and music theory for adult learners.">
+    <link rel="canonical" href="https://onemusic.online/blog/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="/"><span class="nav__dot"></span>One Music Online</a>
+            <div class="nav__links">
+                <a href="/tools/metronome.html">Metronome</a>
+                <a href="/tools/tuner.html">Tuner</a>
+                <a href="/blog/">Guides</a>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                <a class="nav__cta" href="https://musictrainer.pro">Try MusicTrainerPro</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="padding:3.5rem 0 2rem">
+        <div class="container">
+            <h1>Practice Guides</h1>
+            <p>Honest, practical advice for adult learners. New articles added regularly.</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top:1rem">
+        <div class="container">
+            <div class="grid">
+                <a class="card" href="/blog/how-to-practice-as-an-adult.html">
+                    <h3>How to actually practice as an adult</h3>
+                    <p>Structure beats motivation. A realistic framework for busy schedules.</p>
+                </a>
+                <a class="card" href="/blog/how-to-memorize-a-piece.html">
+                    <h3>How to memorize a piece of music</h3>
+                    <p>Chunking, spaced repetition, and why difficulty calibration matters.</p>
+                </a>
+                <!-- AGENT NOTE: Content Agent appends new article cards here. See docs/08 SOP-01. -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">© <span id="year"></span> One Music Media s.r.o. — <a href="/">onemusic.online</a></div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/theme.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

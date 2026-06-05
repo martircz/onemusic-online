@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale &amp; Chord Explorer — Free Online | One Music Online</title>
+    <meta name="description" content="Free online scale explorer. Pick any root and scale — major, minor, modes, pentatonic, blues — see the notes on a piano and hear them played. No signup.">
+    <link rel="canonical" href="https://onemusic.online/tools/scale-explorer.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <style>
+        .note-list { display: flex; justify-content: center; gap: .5rem; flex-wrap: wrap; margin: 1.5rem 0; }
+        .note-chip {
+            font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+            min-width: 44px; padding: .5rem .25rem; border-radius: var(--radius-sm);
+            background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+        }
+        .note-chip--root { background: var(--primary); color: #fff; border-color: var(--primary); }
+        /* piano */
+        .piano { position: relative; display: flex; justify-content: center; height: 160px; margin: 1.5rem 0; user-select: none; }
+        .pkey--white {
+            position: relative; width: 38px; height: 160px; background: #fff; border: 1px solid #cbd5e1;
+            border-radius: 0 0 5px 5px; cursor: pointer; display: flex; align-items: flex-end; justify-content: center;
+        }
+        .pkey--white:hover { background: #f1f5f9; }
+        .pkey--white.in-scale { background: rgba(67,56,202,.18); }
+        .pkey--white.is-root { background: var(--primary); }
+        .pkey--white.is-root .pkey__label { color: #fff; }
+        .pkey__label { font-size: .7rem; color: var(--text-muted); margin-bottom: 6px; pointer-events: none; }
+        .pkey--black {
+            position: absolute; top: 0; right: -13px; width: 26px; height: 100px; z-index: 2;
+            background: #1e293b; border-radius: 0 0 4px 4px; cursor: pointer;
+        }
+        .pkey--black:hover { background: #334155; }
+        .pkey--black.in-scale { background: var(--primary-dark); }
+        [data-theme="dark"] .pkey--white { background: #1e293b; border-color: #334155; }
+        [data-theme="dark"] .pkey--white:hover { background: #283548; }
+        [data-theme="dark"] .pkey--white.in-scale { background: rgba(129,140,248,.3); }
+        .explorer-controls { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: .5rem; }
+        .explorer-controls label { display: flex; flex-direction: column; gap: .3rem; text-align: left; font-size: .8rem; color: var(--text-muted); }
+    </style>
+    <script type="application/ld+json">
+    { "@context":"https://schema.org","@type":"WebApplication","name":"Scale and Chord Explorer","applicationCategory":"MusicApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"} }
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="/"><span class="nav__dot"></span>One Music Online</a>
+            <div class="nav__links">
+                <a href="/tools/metronome.html">Metronome</a>
+                <a href="/tools/tuner.html">Tuner</a>
+                <a href="/blog/">Guides</a>
+                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+                <a class="nav__cta" href="https://musictrainer.pro">Try MusicTrainerPro</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="tool" style="max-width:760px">
+        <h1>Scale &amp; Chord Explorer</h1>
+        <p class="tool__sub">Pick a root and a scale. See it on the piano, hear it played.</p>
+
+        <div class="tool__panel">
+            <div class="explorer-controls">
+                <label>Root
+                    <select id="rootSelect" aria-label="Root note"></select>
+                </label>
+                <label>Scale
+                    <select id="scaleSelect" aria-label="Scale type"></select>
+                </label>
+            </div>
+
+            <div class="note-list" id="noteList"></div>
+
+            <div class="piano" id="piano"></div>
+
+            <button class="btn btn--primary btn--lg" id="playScaleBtn">▶ Play scale</button>
+            <p style="color:var(--text-muted);font-size:.85rem;margin-top:.75rem">Click any key to hear it.</p>
+        </div>
+
+        <article class="prose" style="text-align:left;margin-top:3rem">
+            <h2>About scales</h2>
+            <p>A scale is a set of notes spaced by a fixed pattern of intervals. The same pattern starting on a different root gives a different key. This tool covers the major scale, the three minor scales, all seven modes, the major and minor pentatonics, and the blues scale.</p>
+            <h2>How to use it</h2>
+            <ul>
+                <li>Choose a root note and a scale type — the notes appear and highlight on the keyboard.</li>
+                <li>The root is shown in solid indigo; other scale tones are tinted.</li>
+                <li>Press <em>Play scale</em> to hear it ascend, or click individual keys.</li>
+            </ul>
+            <p>Practising scales with structure and feedback? <a href="https://musictrainer.pro">MusicTrainerPro</a> builds scale exercises into your practice plan.</p>
+        </article>
+
+        <div class="cta-band" style="margin-top:3rem">
+            <h2>Turn theory into practice</h2>
+            <p>MusicTrainerPro turns scales into trackable exercises with real instrument input.</p>
+            <a class="btn btn--accent btn--lg" href="https://musictrainer.pro">Try it free →</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">© <span id="year"></span> One Music Media s.r.o. — <a href="/">onemusic.online</a></div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/scale-explorer.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

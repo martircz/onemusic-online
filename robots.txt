@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onemusic.online/sitemap.xml
