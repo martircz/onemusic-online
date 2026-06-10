@@ -68,15 +68,15 @@
         if (semis === current.semitones) {
             score++; streak++; best = Math.max(best, streak);
             btn.classList.add('correct');
-            $('feedback').textContent = '✓ Correct — ' + correctName;
-            $('feedback').style.color = 'var(--accent-dark)';
+            $('feedback').textContent = 'Correct — ' + correctName;
+              $('feedback').style.color = 'var(--primary)';
         } else {
             streak = 0;
             btn.classList.add('wrong');
             document.querySelectorAll('.answer-btn').forEach(b => {
                 if (parseInt(b.dataset.semis) === current.semitones) b.classList.add('correct');
             });
-            $('feedback').textContent = '✗ It was ' + correctName;
+            $('feedback').textContent = 'It was ' + correctName;
             $('feedback').style.color = '#dc2626';
         }
         $('score').textContent = score + '/' + total;

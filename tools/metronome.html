@@ -3,94 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Free Online Metronome — Accurate, No Ads | One Music Online</title>
     <meta name="description" content="A free, accurate online metronome with adjustable BPM, time signatures, and accented beats. Works in your browser — no download, no signup.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://onemusic.online/tools/metronome.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onemusic.online/tools/metronome.html">
+    <meta property="og:title" content="Free Online Metronome">
+    <meta property="og:description" content="Accurate online metronome with adjustable BPM, time signatures, and accent beats. No signup needed.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141619' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    { "@context":"https://schema.org","@type":"WebApplication","name":"Online Metronome","url":"https://onemusic.online/tools/metronome.html","applicationCategory":"MusicApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"},"description":"A free, accurate online metronome with adjustable BPM, time signatures, and accented beats." }
+    </script>
+
     <link rel="stylesheet" href="/assets/css/site.css">
     <style>
-        .bpm-display { font-size: 4.5rem; line-height: 1; color: var(--primary); }
-        .bpm-label { color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; }
-        #beatDots { display: flex; justify-content: center; gap: .75rem; margin: 1.5rem 0; }
-        .beat-dot { width: 18px; height: 18px; border-radius: 50%; background: var(--border); transition: transform .08s, background .08s; }
-        .beat-dot--accent { background: var(--text-muted); }
-        .beat-dot.active { background: var(--primary); transform: scale(1.5); }
-        .beat-dot--accent.active { background: var(--accent-dark); }
+        .bpm-display {
+            font-size: clamp(4rem, 10vw, 6rem);
+            line-height: 1;
+            color: var(--ink-900);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0.5rem 0;
+        }
+        [data-theme="dark"] .bpm-display {
+            color: var(--primary);
+        }
+        .bpm-label {
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        #beatDots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            min-height: 22px;
+        }
+        .beat-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--border);
+            transition: transform 0.08s ease, background 0.08s ease;
+        }
+        .beat-dot--accent {
+            background: var(--ink-400);
+        }
+        .beat-dot.active {
+            background: var(--ink-900);
+            transform: scale(1.4);
+            box-shadow: 0 0 12px rgba(11, 12, 16, 0.3);
+        }
+        [data-theme="dark"] .beat-dot.active {
+            background: var(--primary);
+            box-shadow: 0 0 12px var(--primary-glow-strong);
+        }
+        .tool-section {
+            margin-top: 3rem;
+        }
+        .inline-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+        .inline-label select {
+            min-width: 80px;
+            text-align: center;
+        }
     </style>
-    <script type="application/ld+json">
-    { "@context":"https://schema.org","@type":"WebApplication","name":"Online Metronome","applicationCategory":"MusicApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"} }
-    </script>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav__inner">
-            <a class="nav__brand" href="/"><span class="nav__dot"></span>One Music Online</a>
-            <div class="nav__links">
-                <a href="/tools/metronome.html">Metronome</a>
-                <a href="/tools/tuner.html">Tuner</a>
-                <a href="/blog/">Guides</a>
-                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-                <a class="nav__cta" href="https://musictrainer.pro">Try MusicTrainerPro</a>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="/" class="nav__brand" aria-label="One Music Online home">
+                <span class="nav__dot" aria-hidden="true"></span>
+                One Music Online
+            </a>
+            <div class="nav__links" role="menubar">
+                <a href="/tools/metronome.html" role="menuitem" class="active">Metronome</a>
+                <a href="/tools/tuner.html" role="menuitem">Tuner</a>
+                <a href="/tools/ear-trainer.html" role="menuitem">Ear Trainer</a>
+                <a href="/tools/scale-explorer.html" role="menuitem">Scales</a>
+                <a href="/blog/" role="menuitem">Guides</a>
+            </div>
+            <div class="nav__actions">
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme" type="button">
+                    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a class="nav__cta" href="https://musictrainer.pro">MusicTrainerPro</a>
+                <button class="nav__menu-btn" aria-label="Toggle menu" aria-expanded="false" type="button">
+                    <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+                </button>
             </div>
         </div>
     </nav>
 
     <main class="tool">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="sep" aria-hidden="true">/</span>
+            <a href="/tools/metronome.html">Metronome</a>
+        </nav>
+
         <h1>Online Metronome</h1>
-        <p class="tool__sub">Accurate, free, and instant. Press space to start.</p>
+        <p class="tool__sub">Accurate, free, and instant. Press space to start or stop.</p>
 
         <div class="tool__panel">
             <div class="bpm-label">Tempo</div>
-            <div class="bpm-display tool__readout"><span id="bpmValue">100</span></div>
+            <div class="bpm-display tool__readout" id="bpmValue">100</div>
             <div class="bpm-label">BPM</div>
 
-            <div id="beatDots"></div>
+            <div id="beatDots" aria-label="Beat indicator"></div>
 
             <div class="control-row">
-                <button class="iconbtn" id="bpmMinus" aria-label="Decrease BPM">−</button>
+                <button class="iconbtn" id="bpmMinus" aria-label="Decrease BPM" type="button">
+                    <svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
                 <input type="range" id="bpmSlider" min="30" max="300" value="100" aria-label="Tempo">
-                <button class="iconbtn" id="bpmPlus" aria-label="Increase BPM">+</button>
+                <button class="iconbtn" id="bpmPlus" aria-label="Increase BPM" type="button">
+                    <svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
             </div>
 
             <div class="control-row">
-                <label>Time signature
+                <div class="inline-label">
+                    <label for="beatsSelect">Beats per bar</label>
                     <select id="beatsSelect" aria-label="Beats per bar">
-                        <option value="2">2/4</option>
-                        <option value="3">3/4</option>
-                        <option value="4" selected>4/4</option>
-                        <option value="5">5/4</option>
-                        <option value="6">6/8</option>
+                        <option value="2">2 / 4</option>
+                        <option value="3">3 / 4</option>
+                        <option value="4" selected>4 / 4</option>
+                        <option value="5">5 / 4</option>
+                        <option value="6">6 / 8</option>
                     </select>
-                </label>
+                </div>
             </div>
 
-            <button class="btn btn--primary btn--lg" id="playBtn" style="margin-top:.5rem">▶ Start</button>
+            <button class="btn btn--primary btn--lg" id="playBtn" type="button" style="margin-top:0.75rem">
+                Start
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
         </div>
 
-        <article class="prose" style="text-align:left;margin-top:3rem">
-            <h2>How to use this metronome</h2>
-            <p>Set your tempo with the slider or the +/− buttons, choose a time signature, and hit Start (or press the spacebar). The first beat of each bar is accented so you can feel the pulse.</p>
-            <h2>Practising with a metronome</h2>
-            <ul>
-                <li>Start slower than feels comfortable — accuracy first, speed later.</li>
-                <li>Raise the tempo in small steps (2–4 BPM) once a passage is clean.</li>
-                <li>Practise difficult bars in isolation before playing the whole piece.</li>
-            </ul>
-            <p>Want the metronome built into structured practice with progress tracking and real instrument feedback? <a href="https://musictrainer.pro">Try MusicTrainerPro free</a>.</p>
-        </article>
+        <!-- SEO Content -->
+        <div class="tool-section">
+            <article class="prose">
+                <h2>How to use this metronome</h2>
+                <p>Set your tempo with the slider or the +/minus buttons, choose a time signature, and hit Start (or press the spacebar). The first beat of each bar is accented so you can feel the pulse.</p>
 
-        <div class="cta-band" style="margin-top:3rem">
+                <h2>Practising with a metronome</h2>
+                <ul>
+                    <li>Start slower than feels comfortable — accuracy first, speed later.</li>
+                    <li>Raise the tempo in small steps (2 to 4 BPM) once a passage is clean.</li>
+                    <li>Practise difficult bars in isolation before playing the whole piece.</li>
+                </ul>
+                <p>Want the metronome built into structured practice with progress tracking and real instrument feedback? <a href="https://musictrainer.pro">Try MusicTrainerPro free</a>.</p>
+            </article>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-band">
             <h2>Practice with purpose</h2>
             <p>MusicTrainerPro turns a metronome into a full practice loop — exercises, plans, and feedback.</p>
-            <a class="btn btn--accent btn--lg" href="https://musictrainer.pro">Get started free →</a>
+            <a href="https://musictrainer.pro" class="btn btn--outline">
+                Get started free
+                <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
         </div>
     </main>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer__bottom">© <span id="year"></span> One Music Media s.r.o. — <a href="/">onemusic.online</a></div>
+            <div class="footer__bottom">
+                <span>&copy; <span id="year"></span> One Music Media s.r.o.</span>
+                <div class="footer__legal">
+                    <a href="https://musictrainer.pro/privacy">Privacy</a>
+                    <a href="https://musictrainer.pro/terms">Terms</a>
+                </div>
+            </div>
         </div>
     </footer>
 

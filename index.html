@@ -3,142 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Music Online — Free Tools & Guides for Musicians</title>
-    <meta name="description" content="Free online metronome, guitar tuner, ear trainer and practice guides for musicians. By One Music Media — makers of MusicTrainerPro.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Free Music Tools — Metronome, Tuner, Ear Trainer | One Music Online</title>
+    <meta name="title" content="Free Music Tools — Metronome, Tuner, Ear Trainer | One Music Online">
+    <meta name="description" content="Free online metronome, chromatic tuner, ear trainer, and scale explorer for musicians. Works in your browser — no signup, no download, no ads.">
+    <meta name="keywords" content="free metronome online, online tuner, ear trainer, scale explorer, metronome bpm, chromatic tuner, music practice tools, free music apps">
+    <meta name="author" content="One Music Media s.r.o.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://onemusic.online/">
-    <meta property="og:title" content="One Music Online — Free Tools for Musicians">
-    <meta property="og:description" content="Free online metronome, tuner, and practice guides. No signup needed.">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://onemusic.online/">
+    <meta property="og:title" content="Free Music Tools — Metronome, Tuner, Ear Trainer">
+    <meta property="og:description" content="Free online metronome, chromatic tuner, ear trainer, and scale explorer. Works in your browser — no signup needed.">
+    <meta property="og:site_name" content="One Music Online">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Music Tools — Metronome, Tuner, Ear Trainer">
+    <meta name="twitter:description" content="Free online metronome, chromatic tuner, ear trainer, and scale explorer. No signup, no download.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141619' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18V5l12-2v13'/%3E%3Ccircle cx='6' cy='18' r='3'/%3E%3Ccircle cx='18' cy='16' r='3'/%3E%3C/svg%3E">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/site.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "One Music Media",
+      "@type": "WebSite",
+      "name": "One Music Online",
       "url": "https://onemusic.online",
-      "sameAs": ["https://onemusic.media", "https://musictrainer.pro"]
+      "publisher": {
+        "@type": "Organization",
+        "name": "One Music Media",
+        "url": "https://onemusic.media"
+      }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Free Music Tools",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Online Metronome",
+            "url": "https://onemusic.online/tools/metronome.html",
+            "applicationCategory": "MusicApplication",
+            "offers": { "@type": "Offer", "price": "0" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Chromatic Tuner",
+            "url": "https://onemusic.online/tools/tuner.html",
+            "applicationCategory": "MusicApplication",
+            "offers": { "@type": "Offer", "price": "0" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Ear Trainer",
+            "url": "https://onemusic.online/tools/ear-trainer.html",
+            "applicationCategory": "MusicApplication",
+            "offers": { "@type": "Offer", "price": "0" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Scale & Chord Explorer",
+            "url": "https://onemusic.online/tools/scale-explorer.html",
+            "applicationCategory": "MusicApplication",
+            "offers": { "@type": "Offer", "price": "0" }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <!-- NAV -->
-    <nav class="nav">
-        <div class="container nav__inner">
-            <a class="nav__brand" href="/"><span class="nav__dot"></span>One Music Online</a>
-            <div class="nav__links">
-                <a href="/tools/metronome.html">Metronome</a>
-                <a href="/tools/tuner.html">Tuner</a>
-                <a href="/blog/">Guides</a>
-                <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-                <a class="nav__cta" href="https://musictrainer.pro">Try MusicTrainerPro</a>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="/" class="nav__brand" aria-label="One Music Online home">
+                <span class="nav__dot" aria-hidden="true"></span>
+                One Music Online
+            </a>
+            <div class="nav__links" role="menubar">
+                <a href="/tools/metronome.html" role="menuitem">Metronome</a>
+                <a href="/tools/tuner.html" role="menuitem">Tuner</a>
+                <a href="/tools/ear-trainer.html" role="menuitem">Ear Trainer</a>
+                <a href="/tools/scale-explorer.html" role="menuitem">Scales</a>
+                <a href="/blog/" role="menuitem">Guides</a>
+            </div>
+            <div class="nav__actions">
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme" type="button">
+                    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a class="nav__cta" href="https://musictrainer.pro">MusicTrainerPro</a>
+                <button class="nav__menu-btn" aria-label="Toggle menu" aria-expanded="false" type="button">
+                    <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero">
-        <div class="container">
-            <h1>Free tools for <span class="accent">serious</span> musicians</h1>
-            <p>A metronome, tuner, and ear trainer that work right in your browser — no signup, no ads in your face. Then practice for real with MusicTrainerPro.</p>
-            <a class="btn btn--primary btn--lg" href="#tools">Explore the tools</a>
-        </div>
-    </header>
+    <main id="main-content">
 
-    <!-- TOOLS -->
-    <section class="section" id="tools">
-        <div class="container">
-            <div class="section__head">
-                <h2>Practice tools, instantly</h2>
-                <p>Built on the same audio engine that powers MusicTrainerPro. Free to use, forever.</p>
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container hero__content">
+                <div class="hero__subtitle fade-in">
+                    <span class="hero__subtitle-dot" aria-hidden="true"></span>
+                    Free tools for musicians
+                </div>
+                <h1 id="hero-heading">
+                    Practice tools that
+                    <span class="accent">just work</span>
+                </h1>
+                <p>
+                    A metronome, tuner, ear trainer, and scale explorer — all running
+                    in your browser. No signup, no download, no ads getting in the way.
+                </p>
+                <div class="hero__actions fade-in">
+                    <a href="#tools" class="btn btn--primary btn--lg">
+                        Open the tools
+                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="grid">
-                <a class="card" href="/tools/metronome.html">
-                    <span class="card__icon">🎯</span>
-                    <h3>Metronome <span class="badge badge--new">Live</span></h3>
-                    <p>Sample-accurate Web Audio metronome with accent beats and time signatures. Keyboard control.</p>
-                </a>
-                <a class="card" href="/tools/tuner.html">
-                    <span class="card__icon">🎸</span>
-                    <h3>Chromatic Tuner <span class="badge badge--new">Live</span></h3>
-                    <p>Tune guitar, bass, or voice with real-time pitch detection and cents accuracy from your mic.</p>
-                </a>
-                <a class="card" href="/tools/ear-trainer.html">
-                    <span class="card__icon">👂</span>
-                    <h3>Ear Trainer <span class="badge badge--new">Live</span></h3>
-                    <p>Interval recognition drills with instant feedback, scoring, and streaks.</p>
-                </a>
-                <a class="card" href="/tools/scale-explorer.html">
-                    <span class="card__icon">🎹</span>
-                    <h3>Scale &amp; Chord Explorer <span class="badge badge--new">Live</span></h3>
-                    <p>Any root, any scale — see it on the piano and hear it played.</p>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="container">
-        <div class="cta-band">
-            <h2>Ready to actually improve?</h2>
-            <p>Free tools are great for a quick fix. MusicTrainerPro gives you structured practice, real instrument feedback, and a marketplace of courses and sheet music.</p>
-            <a class="btn btn--accent btn--lg" href="https://musictrainer.pro">Start practicing free →</a>
-        </div>
-    </section>
-
-    <!-- GUIDES TEASER -->
-    <section class="section">
-        <div class="container">
-            <div class="section__head">
-                <h2>Practice guides</h2>
-                <p>Honest, practical advice for adult learners — no fluff.</p>
+        <!-- Tools Grid -->
+        <section class="section" id="tools" aria-labelledby="tools-heading">
+            <div class="container">
+                <div class="section__head fade-in">
+                    <span class="section__label">Tools</span>
+                    <h2 id="tools-heading">Everything you need, instantly</h2>
+                    <p>Built on the same audio engine that powers MusicTrainerPro. Free to use, forever.</p>
+                </div>
+                <div class="grid grid--2">
+                    <!-- Metronome -->
+                    <a class="tool-card fade-in" href="/tools/metronome.html">
+                        <span class="tool-card__badge">Tool</span>
+                        <div class="tool-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3>Metronome</h3>
+                        <p>Sample-accurate Web Audio metronome with adjustable BPM, accent beats, and time signatures.</p>
+                    </a>
+                    <!-- Tuner -->
+                    <a class="tool-card fade-in" href="/tools/tuner.html">
+                        <span class="tool-card__badge">Tool</span>
+                        <div class="tool-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <h3>Chromatic Tuner</h3>
+                        <p>Real-time pitch detection from your microphone. Cents-accurate for guitar, bass, voice, or any instrument.</p>
+                    </a>
+                    <!-- Ear Trainer -->
+                    <a class="tool-card fade-in" href="/tools/ear-trainer.html">
+                        <span class="tool-card__badge">Tool</span>
+                        <div class="tool-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </div>
+                        <h3>Ear Trainer</h3>
+                        <p>Interval recognition drills with instant feedback, scoring, streaks, and reference songs.</p>
+                    </a>
+                    <!-- Scale Explorer -->
+                    <a class="tool-card fade-in" href="/tools/scale-explorer.html">
+                        <span class="tool-card__badge">Tool</span>
+                        <div class="tool-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
+                        </div>
+                        <h3>Scale &amp; Chord Explorer</h3>
+                        <p>Pick any root and scale type. See the notes on a virtual piano and hear them played.</p>
+                    </a>
+                </div>
             </div>
-            <div class="grid">
-                <a class="card" href="/blog/how-to-practice-as-an-adult.html">
-                    <h3>How to actually practice as an adult</h3>
-                    <p>Structure beats motivation. A realistic framework for busy schedules.</p>
-                </a>
-                <a class="card" href="/blog/how-to-memorize-a-piece.html">
-                    <h3>How to memorize a piece of music</h3>
-                    <p>Chunking, spaced repetition, and the role of difficulty calibration.</p>
-                </a>
-                <a class="card" href="/blog/">
-                    <h3>All guides →</h3>
-                    <p>Browse the full library of practice and theory articles.</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="container">
+            <div class="cta-band fade-in">
+                <h2>Want structured practice?</h2>
+                <p>
+                    These tools are a great start. MusicTrainerPro adds courses, sheet music,
+                    real instrument feedback, and progress tracking.
+                </p>
+                <a href="https://musictrainer.pro" class="btn btn--outline">
+                    Try MusicTrainerPro free
+                    <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+        <!-- Guides -->
+        <section class="section section--alt" aria-labelledby="guides-heading">
+            <div class="container">
+                <div class="section__head fade-in">
+                    <span class="section__label">Guides</span>
+                    <h2 id="guides-heading">Practical advice for adult musicians</h2>
+                    <p>Honest, no-fluff writing about practice, theory, and musicianship.</p>
+                </div>
+                <div class="grid">
+                    <a class="guide-card fade-in" href="/blog/how-to-practice-as-an-adult.html">
+                        <h3>How to actually practice as an adult</h3>
+                        <p>Structure beats motivation. A realistic framework for busy schedules and limited practice time.</p>
+                        <span class="guide-card__link">
+                            Read more
+                            <svg style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </a>
+                    <a class="guide-card fade-in" href="/blog/how-to-memorize-a-piece.html">
+                        <h3>How to memorize a piece of music</h3>
+                        <p>Chunking, spaced repetition, and why difficulty calibration is the secret to reliable memorization.</p>
+                        <span class="guide-card__link">
+                            Read more
+                            <svg style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </a>
+                    <a class="guide-card fade-in" href="/blog/">
+                        <h3>Browse all guides</h3>
+                        <p>Full library of practice tips, theory guides, and articles for serious musicians.</p>
+                        <span class="guide-card__link">
+                            All guides
+                            <svg style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer__grid">
                 <div>
-                    <div class="footer__brand">One Music Media</div>
-                    <p style="color:var(--text-muted);font-size:.9rem;max-width:280px">Serious tools for musicians. Built in the Czech Republic.</p>
+                    <a href="/" class="footer__brand" aria-label="One Music Online home">
+                        <span class="nav__dot" aria-hidden="true"></span>
+                        One Music Online
+                    </a>
+                    <p class="footer__desc">
+                        Free tools for musicians. Built in the Czech Republic by One Music Media.
+                    </p>
                 </div>
                 <div>
                     <h4>Tools</h4>
                     <a href="/tools/metronome.html">Metronome</a>
                     <a href="/tools/tuner.html">Tuner</a>
+                    <a href="/tools/ear-trainer.html">Ear Trainer</a>
+                    <a href="/tools/scale-explorer.html">Scale Explorer</a>
+                </div>
+                <div>
+                    <h4>Content</h4>
                     <a href="/blog/">Guides</a>
-                </div>
-                <div>
-                    <h4>Products</h4>
                     <a href="https://musictrainer.pro">MusicTrainerPro</a>
-                    <a href="https://onemusic.media">One Music Media</a>
                 </div>
                 <div>
-                    <h4>Legal</h4>
+                    <h4>Company</h4>
+                    <a href="https://onemusic.media">One Music Media</a>
                     <a href="https://musictrainer.pro/privacy">Privacy</a>
                     <a href="https://musictrainer.pro/terms">Terms</a>
                 </div>
             </div>
-            <div class="footer__bottom">© <span id="year"></span> One Music Media s.r.o. — onemusic.online</div>
+            <div class="footer__bottom">
+                <span>&copy; <span id="year"></span> One Music Media s.r.o.</span>
+                <div class="footer__legal">
+                    <a href="https://musictrainer.pro/privacy">Privacy</a>
+                    <a href="https://musictrainer.pro/terms">Terms</a>
+                </div>
+            </div>
         </div>
     </footer>
 
