@@ -39,6 +39,9 @@
     --primary-glow: rgba(28, 53, 89, 0.10);
     --primary-glow-strong: rgba(28, 53, 89, 0.18);
 
+    --accent: var(--ink-900);
+    --accent-dark: var(--navy-700);
+
     --text: var(--ink-900);
     --text-secondary: var(--ink-700);
     --text-muted: var(--ink-500);
@@ -79,6 +82,9 @@
     --primary-light: var(--navy-300);
     --primary-glow: rgba(59, 114, 176, 0.12);
     --primary-glow-strong: rgba(59, 114, 176, 0.20);
+
+    --accent: var(--primary);
+    --accent-dark: var(--navy-300);
 
     --text: #E8EAF0;
     --text-secondary: #B0B5C1;

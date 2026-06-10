@@ -69,7 +69,7 @@
             score++; streak++; best = Math.max(best, streak);
             btn.classList.add('correct');
             $('feedback').textContent = 'Correct — ' + correctName;
-              $('feedback').style.color = 'var(--primary)';
+            $('feedback').style.color = 'var(--accent-dark)';
         } else {
             streak = 0;
             btn.classList.add('wrong');
